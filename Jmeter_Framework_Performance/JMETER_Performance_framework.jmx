@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Jmeter Performance" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(rumpup)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(thread)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(count)}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variáveis Definidas Pelo Usuário" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="protocol" elementType="Argument">
+              <stringProp name="Argument.name">protocol</stringProp>
+              <stringProp name="Argument.value">https</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="current_date" elementType="Argument">
+              <stringProp name="Argument.name">current_date</stringProp>
+              <stringProp name="Argument.value">${__time(yyyy-MM-dd,)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="URL_DES" elementType="Argument">
+              <stringProp name="Argument.name">URL_DES</stringProp>
+              <stringProp name="Argument.value">apigatewaydes.bvnet.bv</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="URL_QA" elementType="Argument">
+              <stringProp name="Argument.name">URL_QA</stringProp>
+              <stringProp name="Argument.value">apigatewayqa.bvnet.bv</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="URL_UAT" elementType="Argument">
+              <stringProp name="Argument.name">URL_UAT</stringProp>
+              <stringProp name="Argument.value">apigatewayuat.bvnet.bv</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="id_qa" elementType="Argument">
+              <stringProp name="Argument.name">id_qa</stringProp>
+              <stringProp name="Argument.value">usuarioQA</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="password_qa" elementType="Argument">
+              <stringProp name="Argument.name">password_qa</stringProp>
+              <stringProp name="Argument.value">senhaQA</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="id_des" elementType="Argument">
+              <stringProp name="Argument.name">id_des</stringProp>
+              <stringProp name="Argument.value">usuarioDES</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="password_des" elementType="Argument">
+              <stringProp name="Argument.name">password_des</stringProp>
+              <stringProp name="Argument.value">senhaDES</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="id_uat" elementType="Argument">
+              <stringProp name="Argument.name">id_uat</stringProp>
+              <stringProp name="Argument.value">usuarioUAT</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="paswword_uat" elementType="Argument">
+              <stringProp name="Argument.name">paswword_uat</stringProp>
+              <stringProp name="Argument.value">senhaUAT</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="URL" elementType="Argument">
+              <stringProp name="Argument.name">URL</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="id" elementType="Argument">
+              <stringProp name="Argument.name">id</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="senha" elementType="Argument">
+              <stringProp name="Argument.name">senha</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ambiente" elementType="Argument">
+              <stringProp name="Argument.name">ambiente</stringProp>
+              <stringProp name="Argument.value">${__P(ambiente)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Setar Ambiente" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">if(vars.get(&quot;ambiente&quot;).equals(&quot;qa&quot;))
+{
+vars.put(&quot;location&quot;, vars.get(&quot;locationQA&quot;))
+vars.put(&quot;radius&quot;, vars.get(&quot;radiusQA&quot;))
+vars.put(&quot;key&quot;, vars.get(&quot;keyQA&quot;))
+} else if (vars.get(&quot;ambiente&quot;).equals(&quot;des&quot;)){
+vars.put(&quot;location&quot;, vars.get(&quot;locationDES&quot;))
+vars.put(&quot;radius&quot;, vars.get(&quot;radiusDES&quot;))
+vars.put(&quot;key&quot;, vars.get(&quot;keyDES&quot;))	
+} else if (vars.get(&quot;ambiente&quot;).equals(&quot;uat&quot;)){
+vars.put(&quot;location&quot;, vars.get(&quot;locationUAT&quot;))
+vars.put(&quot;radius&quot;, vars.get(&quot;radiusUAT&quot;))
+vars.put(&quot;key&quot;, vars.get(&quot;keyUAT&quot;))
+}
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Controlador de Uma Única Vez" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TOKEN" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${id}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="client_secret" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${password}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_secret</stringProp>
+                </elementProp>
+                <elementProp name="grant_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">client_credentials</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">grant_type</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">auth/oauth/v2/token</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Gerenciador de Cabeçalhos HTTP" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Contenty-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">access_token</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..access_token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Configuração dos dados CSV" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">caminhodoCSV.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames"></stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="CPF" enabled="true">
+          <stringProp name="IfController.condition">${__jexl3(&quot;${tipoPessoa}&quot; == &quot;Fisica&quot;}</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="CPF Generator" enabled="true">
+            <stringProp name="BeanShellSampler.query">import java.util.Random;
+
+		 int digito1 = 0, digito2 = 0, resto = 0;
+		 String  nDigResult;
+		 String numerosComPontuacao;
+		 String numerosSemPontuacao;		 
+		 String cpf;
+
+		 Random numeroAleatorio = new Random();
+
+
+		  //numeros gerados
+		 int n1 = numeroAleatorio.nextInt(10);
+		 int n2 = numeroAleatorio.nextInt(10);
+		 int n3 = numeroAleatorio.nextInt(10);
+		 int n4 = numeroAleatorio.nextInt(10);
+		 int n5 = numeroAleatorio.nextInt(10);
+		 int n6 = numeroAleatorio.nextInt(10);
+		 int n7 = numeroAleatorio.nextInt(10);
+		 int n8 = numeroAleatorio.nextInt(10);
+		 int n9 = numeroAleatorio.nextInt(10);
+
+
+		 int soma = n9*2 + n8*3 + n7*4 + n6*5 + n5*6 + n4*7 + n3*8 + n2*9 + n1*10;
+
+		 int valor = (soma / 11)*11;
+
+		 digito1 = soma-valor;
+
+		  //Primeiro resto da divisão por 11.
+		 resto = (digito1 % 11);
+
+		 if(digito1 &lt; 2){
+		  digito1 = 0;
+		 }
+		 else {
+		   digito1 = 11-resto;
+		 }
+
+		int soma2 = digito1 * 2 + n9*3 + n8*4 + n7*5 + n6*6 + n5*7 + n4*8 + n3*9 + n2*10 + n1*11;
+
+		int valor2 = (soma2 / 11)*11;
+
+		 digito2 = soma2-valor2;
+
+		  //Primeiro resto da divisão por 11.
+		 resto = (digito2 % 11);
+
+		 if(digito2 &lt; 2){
+		  digito2 = 0;
+		 }
+		 else {
+		   digito2 = 11-resto;
+		 }
+
+		 //Conctenando os numeros com mascara
+		 //numerosComPontuacao = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3) +&quot;.&quot; + String.valueOf(n4) +
+		 //                      String.valueOf(n5) + String.valueOf(n6) +&quot;.&quot;+ String.valueOf(n7) +String.valueOf(n8)  +
+		 //                      String.valueOf(n9)+&quot;-&quot;;
+		 
+		 //Conctenando os numeros sem mascara
+		 numerosSemPontuacao = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3) + String.valueOf(n4) +
+                 String.valueOf(n5) + String.valueOf(n6) + String.valueOf(n7) +String.valueOf(n8)  +
+                 String.valueOf(n9);	 
+		 
+		 
+
+		 //Concatenando o primeiro resto com o segundo.
+		  nDigResult = String.valueOf(digito1) + String.valueOf(digito2);
+
+		  //Com Mascara
+		  //cpf = numerosComPontuacao+nDigResult;
+		  
+		  //Sem Mascara
+		  cpf = numerosSemPontuacao+nDigResult;
+
+		  return cpf;
+		  </stringProp>
+            <stringProp name="BeanShellSampler.filename">CPF Generator</stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">cpf</stringProp>
+              <stringProp name="RegexExtractor.regex">(.*)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Teste Originação CPF" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">PAYLOAD CPF</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">v2/varejo/contratacao/proposta-CPCDC-sem-garantia</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Gerenciador de Cabeçalhos HTTP" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Contenty-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Configurar Datas" enabled="true">
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="script">if (vars.get(&quot;dataInicioServico&quot;).equals(&quot;data_Atual&quot;))
+{
+	vars.put(dataInicioServico, vars.get(&quot;current_date&quot;));
+}
+
+if(vars.get(&quot;dataProposta&quot;).equals(&quot;data_Atual&quot;)){
+	vars.put(&quot;dataProposta&quot;, vars.get(&quot;current_data&quot;));
+}
+</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Asserções de Resposta" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="828088660">${MensagemEsperadaPegardoCSV}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">all</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="CNPJ" enabled="true">
+          <stringProp name="IfController.condition">${__jexl3(&quot;${tipoPessoa}&quot; == &quot;Juridica&quot;}</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="CNPJ Generator" enabled="true">
+            <stringProp name="BeanShellSampler.query">import java.util.Random;
+
+		 int digito1 = 0, digito2 = 0, resto = 0;
+		 String  nDigResult;
+		 String numerosContatenados;
+		 String numerosSempontuacao;
+		 String numeroGerado;
+
+		 Random numeroAleatorio = new Random();
+
+
+		  //numeros gerados
+		 int n1 = numeroAleatorio.nextInt(10);
+		 int n2 = numeroAleatorio.nextInt(10);
+		 int n3 = numeroAleatorio.nextInt(10);
+		 int n4 = numeroAleatorio.nextInt(10);
+		 int n5 = numeroAleatorio.nextInt(10);
+		 int n6 = numeroAleatorio.nextInt(10);
+		 int n7 = numeroAleatorio.nextInt(10);
+		 int n8 = numeroAleatorio.nextInt(10);
+		 int n9 = numeroAleatorio.nextInt(10);
+		 int n10 = numeroAleatorio.nextInt(10); 
+		 int n11 = numeroAleatorio.nextInt(10); 
+		 int n12 = numeroAleatorio.nextInt(10); 
+
+
+		 int soma = n12*2 + n11*3 + n10*4 + n9*5 + n8*6 + n7*7 + n6*8 + n5*9 + n4*2 + n3*3 + n2*4 + n1*5;
+
+		 int valor = (soma / 11)*11;
+
+		 digito1 = soma-valor;
+
+		  //Primeiro resto da divisão por 11.
+		 resto = (digito1 % 11);
+
+		 if(digito1 &lt; 2){
+		  digito1 = 0;
+		 }
+		 else {
+		   digito1 = 11-resto;
+		 }
+
+		 int soma2 =  digito1*2 + n12*3 + n11*4 + n10*5 + n9*6 + n8*7 + n7*8 + n6*9 + n5*2 + n4*3 + n3*4 + n2*5 + n1*6 ;
+
+		 int valor2 = (soma2 / 11)*11;
+
+		 digito2 = soma2-valor2;
+
+		  //Primeiro resto da divisão por 11.
+		 resto = (digito2 % 11);
+
+		 if(digito2 &lt; 2){
+		  digito2 = 0;
+		 }
+		 else {
+		   digito2 = 11-resto;
+		 }
+
+		 //Esta linha irá gerar o CNPJ com a pontuação
+		 //numerosContatenados = String.valueOf(n1) + String.valueOf(n2) +&quot;.&quot;+ String.valueOf(n3) + String.valueOf(n4) +
+		 //                      String.valueOf(n5) +&quot;.&quot;+ String.valueOf(n6) + String.valueOf(n7) +String.valueOf(n8)+&quot;/&quot;+
+		 //                      String.valueOf(n9) + String.valueOf(n10) + String.valueOf(n11) +
+		 //                      String.valueOf(n12)+&quot;-&quot;;
+		 
+		 
+		 //Esta linha irá gerar o CNPJ com a pontuação
+		 numerosSempontuacao = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3) + String.valueOf(n4) +
+                 String.valueOf(n5) + String.valueOf(n6) + String.valueOf(n7) +String.valueOf(n8) +
+                 String.valueOf(n9) + String.valueOf(n10) + String.valueOf(n11) +
+                 String.valueOf(n12);
+		 
+
+		 //Concatenando o primeiro resto com o segundo.
+		  nDigResult = String.valueOf(digito1) + String.valueOf(digito2);
+
+		  //numeroGerado = numerosContatenados+nDigResult;
+		  
+		  cnpj = numerosSempontuacao+nDigResult;
+
+		  //System.out.println(&quot;Digito 2 -&gt;&quot;+digito2);
+
+		  //System.out.println(&quot;CNPJ Gerado &quot; + numeroGerado);
+
+		  return cnpj;
+		  
+		}
+
+}</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">cnpj</stringProp>
+              <stringProp name="RegexExtractor.regex">(.*)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NOT FOUND</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Teste Originação CNPJ" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">PAYLOAD CNPJ</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">v2/varejo/contratacao/proposta-CPCDC-sem-garantia</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Gerenciador de Cabeçalhos HTTP" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Contenty-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Asserções de Resposta" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="828088660">${MensagemEsperadaPegardoCSV}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">all</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Ver Árvore de Resultados" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>true</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <fileName>true</fileName>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">caminhodorelatorio/relatorio.xml</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
